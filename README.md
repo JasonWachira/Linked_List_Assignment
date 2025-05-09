@@ -120,4 +120,25 @@ Other wise we just delete by skipping it `current_node.next = current_node.next.
 
 ### Defining a method to delete the last node
 We do the obvious, check if the list is empty.<br>
-We then use a while loop to iterate through 
+We then use a while loop to iterate through
+```python
+    while current_node.next is not None and current_node.next.next is not None:
+        current_node = current_node.next
+
+    current_node.next = None
+```
+
+### Defined a method to search the linked list
+We just itterate the list as we look for a match
+```python
+    def search(self, data):
+        current_node = self.head
+
+        while current_node is not None:
+            if current_node.data == data:
+                return current_node
+            else:
+                current_node = current_node.next
+
+        print("Item not found")
+```
