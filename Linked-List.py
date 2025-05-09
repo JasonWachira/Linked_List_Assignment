@@ -34,6 +34,10 @@ class LinkedList:
             current_node.next = new_node
 
     def Insert_Node_At_End(self, data):
+        if self.head is None:
+            print("Linked List empty")
+            return
+
         current_node = self.head
 
         while current_node.next is not None:
@@ -85,13 +89,12 @@ class LinkedList:
     def search(self, data):
         current_node = self.head
 
-        while current_node.next is not None:
+        while current_node is not None:
             if current_node.data == data:
                 return current_node
             else:
                 current_node = current_node.next
 
         print("Item not found")
-
 
 
